@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %} Contacts {% endblock title %}
+
+{% block body %} 
+<form class="contact_from mx-5 my-5" method="POST" action="{% url 'contacts' %}">
+  {% csrf_token %}
+    <h1> Contact us </h1> 
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input type="text" class="form-control" id="Name" name="Name" aria-describedby="emailHelp">
+      </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email Add</label>
+      <input type="email" class="form-control" id="Email" name="Email" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Address</label>
+      <input type="text" class="form-control" name="Address" id="Address">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Phone</label>
+        <input type="number" class="form-control" name="Phone" id="Phone">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">(Description) Ask Any question or give us suggestions to improve</label>
+        <textarea class="form-control" id="Desc" name="Desc" rows="3"></textarea>
+      </div>
+    <button type="POST" class="btn btn-primary">Submit</button>
+  </form>
+{% endblock body %}

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %} Profile {% endblock title %}
+
+{% block body %} 
+
+<form class="row g-3 mx-5 my-5" method="POST" action="{% url 'signup' %}">
+  {% csrf_token %}
+    <h1>Sign up here.</h1> 
+    <div class="col-md-4">
+      <label for="validationDefault01" class="form-label">username</label>
+      <input type="text" class="form-control" name="username" id="username" value="" required>
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault01" class="form-label">First name</label>
+      <input type="text" class="form-control" name="firstname" id="firstname" value="" required>
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault01" class="form-label">Laset name</label>
+      <input type="text" class="form-control" name="lastname" id="lastname" value="" required>
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefaultUsername" class="form-label">Email</label>
+      <div class="input-group">
+        <span class="input-group-text" id="inputGroupPrepend2">@</span>
+        <input type="text" class="form-control" name="email" id="email"  aria-describedby="inputGroupPrepend2" required>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault02" class="form-label">password</label>
+      <input type="text" class="form-control" name="password" id="password" value="" required>
+    </div>
+    <div class="col-md-4">
+        <label for="validationDefault01" class="form-label">phone number</label>
+        <input type="text" class="form-control" name="phone" id="phone" value="" required>
+      </div>
+      <div class="col-md-4">
+        <label for="validationDefault02" class="form-label">Occupation</label>
+        <input type="text" class="form-control" name="occupation" id="occupation" value="" required>
+      </div>
+    <div class="col-md-6">
+      <label for="validationDefault03" class="form-label">country</label>
+      <input type="text" class="form-control" name="city" id="city" required>
+    </div>
+    <div class="col-md-3">
+      <label for="validationDefault04" class="form-label">city</label>
+      <select class="form-select" name="state" id="state" required>
+        <option selected disabled value="">Choose...</option>
+        <option> dhaka</option>
+        <option> rajshahi</option>
+        <option> khulna</option>
+        <option> barishal</option>
+        <option> chottogram</option>
+        <option> sylleht</option>
+        <option> moymonshing</option>
+        <option> others</option>
+      </select>
+    </div>
+    <div class="input_forms_gender">
+      <div class="gender">
+          <p>Gender :</p>
+      <input type="radio" name="gender" id="gender" value="male" required>Male</input>
+      <input type="radio" name="gender" id="gender" value="female" required>Female</input>
+      </div>
+  </div>
+    <div class="col-12">
+      <div class="form-check float-end">
+        <input class="form-check-input" type="checkbox" name="agree" value="" id="agree" required>
+        <label class="form-check-label" for="invalidCheck2">
+          Agree to terms and conditions
+        </label>
+      </div>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+  </form>
+
+{% endblock body %}
