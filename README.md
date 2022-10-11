@@ -6,3 +6,4 @@ after log in user can see the user informations in the profile page.
 then the selenium automation codes are also included in the repository.
 the code might be helpful for someone who wants to learn django.
 the code might be helpful for someone who wants to learn selenium automation.
+the selenium testing includes the login automation, signup automation, navbar, check box, radio button, text input automation and so on.
