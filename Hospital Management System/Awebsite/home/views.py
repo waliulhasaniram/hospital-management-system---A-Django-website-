@@ -36,8 +36,8 @@ def signup(request):
         password = request.POST['password']
         phone = request.POST['phone']
         occupation = request.POST['occupation']
+        country = request.POST['country']
         city = request.POST['city']
-        state = request.POST['state']
         agree = request.POST['agree']
 
         #creating user 

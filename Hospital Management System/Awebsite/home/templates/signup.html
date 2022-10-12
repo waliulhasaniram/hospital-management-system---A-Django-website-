@@ -6,9 +6,10 @@
 
 <form class="row g-3 mx-5 my-5" method="POST" action="{% url 'signup' %}">
   {% csrf_token %}
-    <h1>Sign up here.</h1> 
+    <h1>Sign up here.</h1>
+    <p>avoid space in the username, firstname, lastname </p> 
     <div class="col-md-4">
-      <label for="validationDefault01" class="form-label">Username</label>
+      <label for="validationDefault01" class="form-label">username</label>
       <input type="text" class="form-control" name="username" id="username" value="" required>
     </div>
     <div class="col-md-4">
@@ -27,11 +28,11 @@
       </div>
     </div>
     <div class="col-md-4">
-      <label for="validationDefault02" class="form-label">Password</label>
+      <label for="validationDefault02" class="form-label">password</label>
       <input type="text" class="form-control" name="password" id="password" value="" required>
     </div>
     <div class="col-md-4">
-        <label for="validationDefault01" class="form-label">Phone number</label>
+        <label for="validationDefault01" class="form-label">phone number</label>
         <input type="text" class="form-control" name="phone" id="phone" value="" required>
       </div>
       <div class="col-md-4">
@@ -40,20 +41,20 @@
       </div>
     <div class="col-md-6">
       <label for="validationDefault03" class="form-label">country</label>
-      <input type="text" class="form-control" name="city" id="city" required>
+      <input type="text" class="form-control" name="country" id="country" required>
     </div>
     <div class="col-md-3">
       <label for="validationDefault04" class="form-label">city</label>
-      <select class="form-select" name="state" id="state" required>
+      <select class="form-select" name="city" id="city" required>
         <option selected disabled value="">Choose...</option>
-        <option> dhaka</option>
-        <option> rajshahi</option>
-        <option> khulna</option>
-        <option> barishal</option>
-        <option> chottogram</option>
-        <option> sylleht</option>
-        <option> moymonshing</option>
-        <option> others</option>
+        <option id="dhaka"> dhaka</option>
+        <option id="rajshahi"> rajshahi</option>
+        <option id="khulna"> khulna</option>
+        <option id="barishal"> barishal</option>
+        <option id="chottogram"> chottogram</option>
+        <option id="sylleht"> sylleht</option>
+        <option id="moymonshing"> moymonshing</option>
+        <option id="others"> others</option>
       </select>
     </div>
     <div class="input_forms_gender">
@@ -72,7 +73,7 @@
       </div>
     </div>
     <div class="col-12">
-      <button class="btn btn-primary" type="submit">Submit form</button>
+      <button class="btn btn-primary" id="signupbutton" type="submit">Submit form</button>
     </div>
   </form>
 
