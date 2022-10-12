@@ -1,0 +1,215 @@
+#----------------------- open the website for automation------------------------ 
+from selenium import webdriver
+from selenium.webdriver.edge.service import Service
+driver_service = Service(executable_path='W:\\Edge Webdriver\\msedgedriver.exe') 
+driver = webdriver.Edge(service=driver_service)
+driver.get('http://127.0.0.1:8000/')
+driver.set_window_size(1120, 1000)
+
+###########################################################################################
+
+#------------------------ navbar option test-----------------------------
+from selenium import webdriver
+from selenium.webdriver.edge.service import Service
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
+import time
+
+driver_service = Service(executable_path='W:\\Edge Webdriver\\msedgedriver.exe') 
+driver = webdriver.Edge(service=driver_service)
+driver.get('http://127.0.0.1:8000/')
+driver.set_window_size(1120, 1000)
+
+time.sleep(3)
+
+try:
+    driver.find_element('xpath','//*[@id="contact"]').click()
+except NoSuchElementException:
+        print("Cant'\t Find Element!!")
+
+time.sleep(3)
+
+
+
+
+#################################################################################################
+
+#------------------------signup testing----------------------------
+from selenium import webdriver
+from selenium.webdriver.edge.service import Service
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
+from selenium.webdriver.support.ui import Select
+import time
+
+driver_service = Service(executable_path='W:\\Edge Webdriver\\msedgedriver.exe')
+driver = webdriver.Edge(service=driver_service)
+driver.get('http://127.0.0.1:8000/')
+driver.set_window_size(1120, 1000)
+
+time.sleep(2)
+driver.find_element(By.ID, 'signup').click()
+time.sleep(2)
+
+driver.find_element(By.ID, 'username').send_keys('Mr. WH')
+driver.find_element(By.ID, 'firstname').send_keys('waliul1')
+driver.find_element(By.ID, 'lastname').send_keys('hasan1')
+driver.find_element(By.ID, 'email').send_keys('hasan@gmail.com')
+driver.find_element(By.ID, 'password').send_keys('123456')
+driver.find_element(By.ID, 'phone').send_keys('01723456')
+driver.find_element(By.ID, 'occupation').send_keys('student')
+driver.find_element(By.ID, 'country').send_keys('bangladesh')
+
+driver.find_element(By.ID, 'city').click()
+time.sleep(1)
+driver.find_element(By.ID, 'dhaka').click()
+
+driver.find_element(By.XPATH, '//*[@id="gender"]').click()
+driver.find_element(By.XPATH, '//*[@id="agree"]').click()
+driver.find_element(By.ID, 'signupbutton').click()
+
+
+
+try:
+    driver.find_element('xpath','//*[@id="doctors"]').click()
+except NoSuchElementException:
+        print("Cant'\t Find Element!!")
+time.sleep(3)  
+
+try:
+    driver.find_element('xpath','//*[@id="home"]').click()
+except NoSuchElementException:
+        print("Cant'\t Find Element!!")
+time.sleep(3) 
+
+
+
+#######################################################################################
+
+
+#--------------- dropdown option test------------------------
+from selenium import webdriver
+from selenium.webdriver.edge.service import Service
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
+from selenium.webdriver.support.ui import Select
+import time
+
+driver_service = Service(executable_path='W:\\Edge Webdriver\\msedgedriver.exe')
+driver = webdriver.Edge(service=driver_service)
+driver.get('http://127.0.0.1:8000/')
+driver.set_window_size(1120, 1000)
+
+find_options = \
+driver.find_element(By.ID, 'dropdown').click()
+time.sleep(2)
+driver.find_element(By.ID, 'services').click()
+time.sleep(3)
+
+try:
+    driver.find_element('xpath','//*[@id="home"]').click()
+except NoSuchElementException:
+        print("Cant'\t Find Element!!")
+time.sleep(3)
+
+
+
+################################################################################################
+
+
+
+
+#---------------login testing-------------------
+from selenium import webdriver
+from selenium.webdriver.edge.service import Service
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
+from selenium.webdriver.support.ui import Select
+import time
+
+driver_service = Service(executable_path='W:\\Edge Webdriver\\msedgedriver.exe')
+driver = webdriver.Edge(service=driver_service)
+driver.get('http://127.0.0.1:8000/')
+driver.set_window_size(1120, 1000)
+
+time.sleep(2)
+driver.find_element(By.ID, 'login').click()
+time.sleep(2)
+
+driver.find_element(By.ID, 'loginusername').send_keys('waliul')
+driver.find_element(By.ID, 'loginpassword').send_keys('123456')
+driver.find_element(By.ID, 'submitbutton').click()
+
+time.sleep(2)
+driver.find_element(By.ID, 'profile').click()
+
+
+
+
+##################################################################################
+
+
+
+
+#----------------------log out testing---------------------------- 
+from selenium import webdriver
+from selenium.webdriver.edge.service import Service
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
+from selenium.webdriver.support.ui import Select
+import time
+
+driver_service = Service(executable_path='W:\\Edge Webdriver\\msedgedriver.exe')
+driver = webdriver.Edge(service=driver_service)
+driver.get('http://127.0.0.1:8000/')
+driver.set_window_size(1120, 1000)
+
+time.sleep(2)
+driver.find_element(By.ID, 'login').click()
+time.sleep(2)
+
+driver.find_element(By.ID, 'loginusername').send_keys('waliul')
+driver.find_element(By.ID, 'loginpassword').send_keys('123456')
+driver.find_element(By.ID, 'submitbutton').click()
+
+time.sleep(2)
+driver.find_element(By.ID, 'profile').click()
+
+time.sleep(3)
+driver.find_element(By.ID, 'logout').click()
+time.sleep(2)
+
+
+
+
+######################################################################################
+
+#------------------------contact-------------------------------
+
+from selenium import webdriver
+from selenium.webdriver.edge.service import Service
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
+from selenium.webdriver.support.ui import Select
+import time
+
+driver_service = Service(executable_path='W:\\Edge Webdriver\\msedgedriver.exe')
+driver = webdriver.Edge(service=driver_service)
+driver.get('http://127.0.0.1:8000/')
+driver.set_window_size(1120, 1000)
+
+time.sleep(2)
+driver.find_element(By.ID, 'contact').click()
+time.sleep(2)
+
+
+driver.find_element(By.ID, 'Name').send_keys('Mr. WH')
+driver.find_element(By.ID, 'Email').send_keys('wh@gmail.com')
+driver.find_element(By.ID, 'Address').send_keys('dhaka,mirpur')
+driver.find_element(By.ID, 'Phone').send_keys('0123654')
+driver.find_element(By.ID, 'Desc').send_keys('Nice website')
+
+driver.find_element(By.ID, 'buttonC').click()
+print("test passed")
+
+
